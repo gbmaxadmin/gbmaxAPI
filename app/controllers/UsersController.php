@@ -1,6 +1,6 @@
 <?php
 
-class UrlController extends BaseController {
+class UsersController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -10,11 +10,26 @@ class UrlController extends BaseController {
 	public function index()
 	{
 		//
-		return Response::json([
+		Log::info('johnny...getting the users.');
+
+		$users = DB::table('user')->get();
+		return Response::json($users);
+
+
+		/*$users = DB::table('users')->get();
+
+		//
+		foreach ($users as $user)
+		{
+		    var_dump($user->name);
+		}*/
+
+		//
+		/*return Response::json([
             'error' => false,
-            'message' => 'Hello API'],
+            'message' => 'Hello API...'],
             201
-        );
+        );*/
 	}
 
 	/**
@@ -46,6 +61,15 @@ class UrlController extends BaseController {
 	public function show($id)
 	{
 		//
+		//$temp = $id;
+
+		$users = DB::table('user')->where('iduser', $id)->first();
+		//$uri = Request::path();
+		//$users = Request::getUser();
+
+		return Response::json([$users]);
+		//return Response::json([$temp]); 
+
 	}
 
 	/**
