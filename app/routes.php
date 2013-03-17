@@ -11,15 +11,14 @@
 |
 */
 
-/*Route::get('/', function()
-{
-	return View::make('hello');
-});*/
-//Route::resource('url', 'UrlController');
-
 Route::group(array('prefix' => 'api/v1'), function() {
- 
-    Route::resource('users', 'UsersController');
+
+	//these would be good for action end-points, like logging a user into the app
+	Route::controller('user/login', 'UserLogin');
+
+
+	//these would be good for returning application Resources/Objects, like the Users resource
+  Route::resource('users', 'UsersController');
  
 });
 
