@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'gbmaxapi',
+			'database'  => 'gb_dev',
 			'username'  => 'root',
 			'password'  => 'bucky',
 			'charset'   => 'utf8',
